@@ -20,10 +20,24 @@ header h1 {
     display: flex;
     justify-content: center;
 }
+
+.modes{
+    margin-top: 1.8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mode-button{
+    padding: 0.5vh;
+    margin: 0 3vh 0 3vh;
+    background-color: #28afb0;
+    border: none;
+    border-radius: 4px;
+}
 .main-box{
     height: 63vh;
     width: 63vh;
-    margin-top: 5vh;
+    margin-top: 3vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +51,7 @@ header h1 {
     color: black;
     border: none;
     border-radius: 4px;
-    background-color: #ECEBF3;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,13 +81,8 @@ header h1 {
     height: 10vh;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 0 20vh 0 20vh ;
-}
-@media(min-width:500px){
-    .button-box{
-        padding: 0 55vh 0 55vh ;
-    }
 }
 .button {
     padding: 1.5vh;
@@ -81,4 +90,5 @@ header h1 {
     border: none;
     border-radius: 4px;
     background-color: cornflowerblue;
+    margin: 2vh;
 }
