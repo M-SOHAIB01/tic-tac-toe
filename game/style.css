@@ -32,7 +32,11 @@ header h1 {
     margin: 0 3vh 0 3vh;
     background-color: #28afb0;
     border: none;
+    border-bottom: 2px solid none;
     border-radius: 4px;
+}
+.border{
+    border-bottom: 4px solid red;
 }
 .main-box{
     height: 63vh;

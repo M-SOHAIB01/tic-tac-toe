@@ -3,6 +3,8 @@ let main_box = document.querySelector(".main-box");
 let winner_box = document.querySelector(".winner-box");
 let win_para = document.querySelector(".win-para");
 let buttons = document.querySelectorAll(".button");
+let with_friend = document.querySelector("#with-friend");
+let with_computer = document.querySelector("#with-computer");
 
 let winingPattern = [
     [0,1,2],
@@ -55,20 +57,60 @@ function checkWinner (){
         } 
     }
 }
-
+let mode = "with-computer";
 let turn = 'O';
 let count = 0;
+let num = 0;
+
+with_computer.classList.add("border");
+with_friend.addEventListener("click",()=>{
+    mode = "with-friend";
+    with_computer.classList.remove("border");
+    with_friend.classList.add("border");
+    resetGame();
+    ables();
+});
+with_computer.addEventListener("click",()=>{
+    mode = "with-computer";
+    with_friend.classList.remove("border");
+    with_computer.classList.add("border");
+    resetGame();
+    ables();
+});
+
 for (let box of boxes){
     box.addEventListener( "click" ,()=>{
-       if( turn == 'O'){
-         box.innerText = "O";
-         turn = 'X';
-        } else{
-         box.innerText = "X";  
-         turn ='O';
+        count++
+       if( mode === "with-friend"){
+        if( turn == 'O'){
+            box.innerText = "O";
+            turn = 'X';
+           } else{
+            box.innerText = "X";  
+            turn ='O';
+          }
+       } else if(mode === "with-computer"){
+        if( turn ='X'){
+            box.innerText = "X"
+            num++
+            turn = 'O'
+            let index =  Math.floor(Math.random() * 9);
+            do {
+                index =  Math.floor(Math.random() * 9);
+            } while (boxes[index].innerText !== '' && num < 9);
+                setTimeout(() => {
+                boxes[index].innerText = "O"
+                num++
+            }, 500);
+            setTimeout(()=>{
+                checkWinner();
+                countBox();
+            },1000);
+            turn = 'X';
+        }
        }
-       count++
-       if(count == 9){
+      let countBox = ()=>{ 
+        if(count == 9){
         showWinner();
         win_para.innerText = `Game Was Draw`;
         setTimeout(() => {
@@ -76,10 +118,10 @@ for (let box of boxes){
             ables();
         }, 5000);
        }
+    }
        box.disabled = true;
-       checkWinner(); 
+        checkWinner();
      });
-     
 }
 
 for (let button of buttons) {
