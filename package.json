@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.11"
+  },
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M-SOHAIB01/tic-tac-toe.git"
+  },
+  "author": "M.SOHAIB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/M-SOHAIB01/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/M-SOHAIB01/tic-tac-toe#readme"
+}
